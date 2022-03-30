@@ -1,0 +1,21 @@
+- #登录成功
+  url: http://hb9.api.okayapi.com/?s=App.User.Login
+  data:
+    app_key: 94A8B3F3EDFBE6FD7B0B01D97CD20EFC
+    username: admin
+    password: admin123
+  assertInfo:
+    - ret=200
+    - err_code=0
+    - err_msg=
+
+- #登录失败-用户名为空
+  url: http://hb9.api.okayapi.com/?s=App.User.Login
+  data:
+    app_key: 94A8B3F3EDFBE6FD7B0B01D97CD20EFC
+    username:
+    password: admin123
+  assertInfo:
+    - ret=400
+    - data={}
+

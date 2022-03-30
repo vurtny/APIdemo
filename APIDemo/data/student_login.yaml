@@ -1,0 +1,19 @@
+- #登录成功
+  url: http://172.16.2.166/api/login
+  data:
+    loginName: admin
+    password: admin123
+    remember: True
+  assertInfo:
+    - code=200
+    - result=
+
+- #登录失败
+  url: http://172.16.2.166/api/login
+  data:
+    loginName: admin
+    password: admin12
+    remember: True
+  assertInfo:
+    - code=-100
+    - result=

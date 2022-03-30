@@ -1,0 +1,100 @@
+- #正常获取个人资料
+  data:
+    app_key: 073D5814AE46F5B8BC9A1E1C36B98109
+    uuid: 33B0BD3368AC212C0759AF5E2DE91633
+    token: 1E40524FDD2A894903F7F949BC1E58162FF05C3ECE9808221475873FDF5266E9
+  url: http://hn216.api.yesapi.cn/?s=App.User.Profile
+  assertInfo:
+    - ret=200
+    - err_code=0
+    - err_msg=
+
+- #获取个人资料失败,app_key错误
+  data:
+    app_key: 083D5814AE46F5B8BC9A1E1C36B98109
+    uuid: 33B0BD3368AC212C0759AF5E2DE91633
+    token: 1E40524FDD2A894903F7F949BC1E58162FF05C3ECE9808221475873FDF5266E9
+  url: http://hn216.api.yesapi.cn/?s=App.User.Profile
+  assertInfo:
+    - ret=406
+    - data=
+
+- #获取个人资料失败,app_key非32位
+  data:
+    app_key: 03D5814AE46F5B8BC9A1E1C36B98109
+    uuid: 33B0BD3368AC212C0759AF5E2DE91633
+    token: 1E40524FDD2A894903F7F949BC1E58162FF05C3ECE9808221475873FDF5266E9
+  url: http://hn216.api.yesapi.cn/?s=App.User.Profile
+  assertInfo:
+    - ret=400
+    - data=
+
+- #获取个人资料失败,app_key为空
+  data:
+    app_key:
+    uuid: 33B0BD3368AC212C0759AF5E2DE91633
+    token: 1E40524FDD2A894903F7F949BC1E58162FF05C3ECE9808221475873FDF5266E9
+  url: http://hn216.api.yesapi.cn/?s=App.User.Profile
+  assertInfo:
+    - ret=400
+    - data=
+
+- #获取个人资料失败，uuid错误
+  data:
+    app_key: 073D5814AE46F5B8BC9A1E1C36B98109
+    uuid: 43B0BD3368AC212C0759AF5E2DE91633
+    token: 1E40524FDD2A894903F7F949BC1E58162FF05C3ECE9808221475873FDF5266E9
+  url: http://hn216.api.yesapi.cn/?s=App.User.Profile
+  assertInfo:
+    - ret=401
+    - data=
+
+- #获取个人资料失败，uuid非32位
+  data:
+    app_key: 073D5814AE46F5B8BC9A1E1C36B98109
+    uuid: 43B0BD3368AC212C0759AF5E2DE916338
+    token: 1E40524FDD2A894903F7F949BC1E58162FF05C3ECE9808221475873FDF5266E9
+  url: http://hn216.api.yesapi.cn/?s=App.User.Profile
+  assertInfo:
+    - ret=400
+    - data=
+
+- #获取个人资料失败，uuid为空
+  data:
+    app_key: 073D5814AE46F5B8BC9A1E1C36B98109
+    uuid:
+    token: 1E40524FDD2A894903F7F949BC1E58162FF05C3ECE9808221475873FDF5266E9
+  url: http://hn216.api.yesapi.cn/?s=App.User.Profile
+  assertInfo:
+    - ret=400
+    - data=
+
+- #获取个人资料失败，token错误
+  data:
+    app_key: 073D5814AE46F5B8BC9A1E1C36B98109
+    uuid: 33B0BD3368AC212C0759AF5E2DE91633
+    token: 2E40524FDD2A894903F7F949BC1E58162FF05C3ECE9808221475873FDF5266E9
+  url: http://hn216.api.yesapi.cn/?s=App.User.Profile
+  assertInfo:
+    - ret=401
+    - data=
+
+- #获取个人资料失败，token非64位
+  data:
+    app_key: 073D5814AE46F5B8BC9A1E1C36B98109
+    uuid: 33B0BD3368AC212C0759AF5E2DE91633
+    token: E40524FDD2A894903F7F949BC1E58162FF05C3ECE9808221475873FDF5266E9
+  url: http://hn216.api.yesapi.cn/?s=App.User.Profile
+  assertInfo:
+    - ret=400
+    - data=
+
+- #获取个人资料失败，token为空
+  data:
+    app_key: 073D5814AE46F5B8BC9A1E1C36B98109
+    uuid: 33B0BD3368AC212C0759AF5E2DE91633
+    token:
+  url: http://hn216.api.yesapi.cn/?s=App.User.Profile
+  assertInfo:
+    - ret=400
+    - data=
